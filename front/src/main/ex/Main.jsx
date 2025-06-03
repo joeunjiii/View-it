@@ -1,10 +1,10 @@
-"use client"
-
 import { useState } from "react"
+import { useNavigate } from 'react-router-dom';
+
 import "./main.css"
 import { FaHome, FaMicrophone, FaFileAlt, FaCog, FaUsers, FaRegFileAlt } from "react-icons/fa"
 
-function App() {
+function Main() {
   const [activeMenu, setActiveMenu] = useState("speech")
 
   return (
@@ -13,7 +13,7 @@ function App() {
       <div className="sidebar">
         <div className="profile-section">
           <div className="profile-icon">
-            <span>프로</span>
+            <span>pro</span>
           </div>
           <div className="profile-info">
             <div className="username">사용자네네임</div>
@@ -93,4 +93,4 @@ function App() {
   )
 }
 
-export default App
+export default Main

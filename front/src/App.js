@@ -1,6 +1,17 @@
-import Login from './login/login';
-import Main from './mainpage/main';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Main from './main/Main';
+import Login from './login/Login';
 
 function App() {
-  return <Main />; // 원하는 페이지 렌더링
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />   
+        <Route path="/login" element={<Login />} />          
+        <Route path="/main" element={<Main />} />
+        
+      </Routes>
+    </Router>
+  );
 }
+export default App;
