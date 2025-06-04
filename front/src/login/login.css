@@ -32,7 +32,7 @@ body {
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 20px;
+  
   transition: background-color 0.3s;
 
   display: flex;                /* 요소 정렬용 flex */
@@ -46,4 +46,20 @@ body {
   border-radius: 6px;
   object-fit: cover;
   background-color: white;
+}
+
+.login-logo {
+  width: 300px;
+  margin-top : 30px;
+  margin-bottom: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.horizontal-line {
+  width: 70%;
+  height: 1px;
+  background-color: #aaa;
+  margin: 20px 0;
 }
