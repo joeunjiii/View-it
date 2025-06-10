@@ -16,47 +16,28 @@
   width: 80px;
   min-width: 80px;
 }
-.sidebar.tablet .profile-section {
-  display: none;
-}
-
 
 .sidebar.tablet .main-nav li span,
 .sidebar.tablet .settings-button span {
-  display: none;
+  display: flex;
 }
-
-
-/* 반응형: 모바일 */
-.sidebar.mobile {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 240px;
-  height: 100vh;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-  z-index: 1000;
-  background: white;
-  box-shadow: 2px 0 6px rgba(0,0,0,0.1);
-}
-
-.sidebar.mobile.open {
-  transform: translateX(0);
-}
-
 
 /* 로고 섹션 */
 .logo-section {
-  text-align: center;
-  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
 }
 
 .sidebar-logo {
   width: 100%;
-  max-width: 120px;     /* PC 기준 최대 너비 */
-  height: auto;         /* 비율 유지 */
-  object-fit: contain;  /* 이미지 잘림 방지 */
+  max-width: 120px;
+  /* PC 기준 최대 너비 */
+  height: auto;
+  /* 비율 유지 */
+  object-fit: contain;
+  /* 이미지 잘림 방지 */
   display: block;
   margin: 0 auto;
 }
@@ -64,9 +45,9 @@
 /* 프로필 섹션 */
 .profile-section {
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 0 20px 20px;
-  border-bottom: 1px solid #f0f0f0;
+  padding: 15px 0;
 }
 
 .profile-icon {
@@ -85,6 +66,42 @@
 .profile-info {
   display: flex;
   flex-direction: column;
+}
+
+
+@media (max-width: 1024px) {
+  .profile-info {
+    display: none;
+  }
+
+  .profile-section {
+    justify-content: center;
+    /* 가운데 정렬 */
+  }
+
+  .profile-icon {
+    margin-right: 0;
+    /* 오른쪽 여백 제거 */
+  }
+
+  .main-nav li {
+    justify-content: center;
+  }
+
+  .menu-icon {
+    margin-right: 0;
+    /* 아이콘 오른쪽 여백 제거 */
+  }
+
+  .settings-button {
+    justify-content: center;
+    /* 가운데 정렬 */
+  }
+
+  .settings-icon {
+    margin-right: 0;
+    /* 오른쪽 여백 제거 */
+  }
 }
 
 .username {
@@ -128,8 +145,11 @@
 }
 
 .menu-icon {
-  margin-right: 12px;
   font-size: 18px;
+}
+
+.main-nav li span {
+  padding-left: 8px;
 }
 
 /* 설정 버튼 */
@@ -144,6 +164,9 @@
 }
 
 .settings-icon {
-  margin-right: 12px;
   font-size: 18px;
+}
+
+.settings-button span {
+  padding-left: 8px;
 }

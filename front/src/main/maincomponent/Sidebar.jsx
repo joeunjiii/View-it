@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FaHome, FaFileAlt, FaCog, FaUsers, FaBars } from "react-icons/fa";
 import "./css/Sidebar.css";
 
@@ -13,7 +14,6 @@ function Sidebar({ activeMenu, setActiveMenu }) {
 
   
   const isTablet = windowWidth <= 1024;
-
   const sidebarClass = isTablet ? "sidebar tablet" : "sidebar";
   return (
     <>
@@ -22,11 +22,13 @@ function Sidebar({ activeMenu, setActiveMenu }) {
       <div className={sidebarClass}>
         {/* 로고 */}
         <div className="logo-section">
+        
+         <Link to="/main">
           <img src="/assets/logo.png" alt="로고" className="sidebar-logo" />
+          </Link>
         </div>
 
-        {/* 프로필 (PC에서만 표시) */}
-        {!isTablet  && (
+  
           <div className="profile-section">
             <div className="profile-icon"><span>프로필</span></div>
             <div className="profile-info">
@@ -34,7 +36,7 @@ function Sidebar({ activeMenu, setActiveMenu }) {
               <div className="email">아이디@naver.com</div>
             </div>
           </div>
-        )}
+        
 
         <nav className="main-nav">
           <ul>
