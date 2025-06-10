@@ -1,5 +1,5 @@
 import { FaRegFileAlt } from "react-icons/fa";
-import './recentsection.css';
+import './css/Recentsection.css';
 
 function RecentSection() {
 

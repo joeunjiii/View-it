@@ -2,7 +2,7 @@
 import SectionHeader from './SectionHeader';
 import RecentSection from './RecentSection';
 import { FaUsers, FaMicrophone } from 'react-icons/fa';
-import './maincontent.css';
+import './css/Maincontent.css';
 
 function MainContent() {
     return (

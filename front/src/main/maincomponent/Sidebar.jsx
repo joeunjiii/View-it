@@ -1,55 +1,82 @@
-import { FaHome, FaFileAlt, FaCog, FaUsers } from "react-icons/fa";
-import './sidebar.css';
+import React, { useState, useEffect } from "react";
+import { FaHome, FaFileAlt, FaCog, FaUsers, FaBars } from "react-icons/fa";
+import "./css/Sidebar.css";
+
 function Sidebar({ activeMenu, setActiveMenu }) {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const handleResize = () => setWindowWidth(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  
+  const isTablet = windowWidth <= 1024;
+
+  const sidebarClass = isTablet ? "sidebar tablet" : "sidebar";
   return (
-    <div className="sidebar">
-      {/* 로고 영역 */}
-      <div className="logo-section">
-        <img src="/assets/logo.png" alt="로고" className="sidebar-logo" />
-      </div>
+    <>
+      
 
-      {/* 프로필 */}
-      <div className="profile-section">
-        <div className="profile-icon">
-          <span>프로필</span>
+      <div className={sidebarClass}>
+        {/* 로고 */}
+        <div className="logo-section">
+          <img src="/assets/logo.png" alt="로고" className="sidebar-logo" />
         </div>
-        <div className="profile-info">
-          <div className="username">사용자네네임</div>
-          <div className="email">아이디@naver.com</div>
+
+        {/* 프로필 (PC에서만 표시) */}
+        {!isTablet  && (
+          <div className="profile-section">
+            <div className="profile-icon"><span>프로필</span></div>
+            <div className="profile-info">
+              <div className="username">사용자네네임</div>
+              <div className="email">아이디@naver.com</div>
+            </div>
+          </div>
+        )}
+
+        <nav className="main-nav">
+          <ul>
+            <MenuItem
+              label="메인"
+              icon={<FaHome />}
+              active={activeMenu === "main"}
+              onClick={() => setActiveMenu("main")}
+              collapsed={isTablet}
+            />
+            <MenuItem
+              label="모의면접"
+              icon={<FaUsers />}
+              active={activeMenu === "interview"}
+              onClick={() => setActiveMenu("interview")}
+              collapsed={isTablet}
+            />
+            <MenuItem
+              label="스피치연습"
+              icon={<FaFileAlt />}
+              active={activeMenu === "speech"}
+              onClick={() => setActiveMenu("speech")}
+              collapsed={isTablet}
+            />
+          </ul>
+        </nav>
+
+        <div className="settings-button">
+          <FaCog className="settings-icon" />
+          {!isTablet && <span>설정</span>}
         </div>
       </div>
+    </>
+  );
+}
 
-      <nav className="main-nav">
-        <ul>
-          <li
-            className={activeMenu === "main" ? "active" : ""}
-            onClick={() => setActiveMenu("main")}
-          >
-            <FaHome className="menu-icon" />
-            <span>메인</span>
-          </li>
-          <li
-            className={activeMenu === "interview" ? "active" : ""}
-            onClick={() => setActiveMenu("interview")}
-          >
-            <FaUsers className="menu-icon" />
-            <span>모의면접</span>
-          </li>
-          <li
-            className={activeMenu === "speech" ? "active" : ""}
-            onClick={() => setActiveMenu("speech")}
-          >
-            <FaFileAlt className="menu-icon" />
-            <span>스피치연습</span>
-          </li>
-        </ul>
-      </nav>
-
-      <div className="settings-button">
-        <FaCog className="settings-icon" />
-        <span>설정</span>
-      </div>
-    </div>
+function MenuItem({ label, icon, active, onClick, collapsed }) {
+  return (
+    <li className={active ? "active" : ""} onClick={onClick}>
+      <div className="menu-icon">{icon}</div>
+      {!collapsed && <span>{label}</span>}
+    </li>
   );
 }
 

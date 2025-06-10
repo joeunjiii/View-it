@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Main from './main/Main';
 import Login from './login/Login';
+import Interview from './main/Interview/Interview';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Route path="/" element={<Navigate to="/login" />} />   
         <Route path="/login" element={<Login />} />          
         <Route path="/main" element={<Main />} />
+        <Route path="/Interview" element={<Interview/>} />
         
       </Routes>
     </Router>
