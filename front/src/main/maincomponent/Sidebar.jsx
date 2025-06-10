@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaFileAlt, FaCog, FaUsers, FaBars } from "react-icons/fa";
+import { FaHome, FaFileAlt, FaCog, FaUsers} from "react-icons/fa";
 import "./css/Sidebar.css";
 
 function Sidebar({ activeMenu, setActiveMenu }) {
@@ -22,7 +22,6 @@ function Sidebar({ activeMenu, setActiveMenu }) {
       <div className={sidebarClass}>
         {/* 로고 */}
         <div className="logo-section">
-        
          <Link to="/main">
           <img src="/assets/logo.png" alt="로고" className="sidebar-logo" />
           </Link>

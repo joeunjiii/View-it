@@ -1,4 +1,4 @@
-/* 기본 리셋 및 폰트 설정 */
+
 * {
   margin: 0;
   padding: 0;
@@ -8,11 +8,5 @@
 
 body {
   background-color: #f5f5f5;
-}
-
-/* 앱 컨테이너 */
-.app-container {
-  display: flex;
-  min-height: 100vh;
 }
 
