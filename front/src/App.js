@@ -3,6 +3,8 @@ import './main/Layout.css';
 import Main from './main/Main';
 import Login from './login/Login';
 import Interview from './main/Interview/Interview';
+import Layout from './main/Layout';
+
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
         <Route path="/" element={<Navigate to="/login" />} />   
         <Route path="/login" element={<Login />} />          
         <Route path="/main" element={<Main />} />
-        <Route path="/Interview" element={<Interview/>} />
+        <Route path="/Interview" element={<Layout Subcomponent={<Interview />} />} />
         
       </Routes>
     </Router>

@@ -9,9 +9,11 @@ function Layout({ Subcomponent}) {
   return (
     <div className="layout-container">
       <Sidebar activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
-      <div className="content">
+
+
+      <main className="content-area">
         {Subcomponent}
-      </div>
+      </main>
     </div>
   );
 }
