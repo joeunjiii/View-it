@@ -1,33 +1,33 @@
 import SectionHeader from "./SectionHeader";
 import RecentSection from "./RecentSection";
 import { FaUsers, FaMicrophone } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./css/Maincontent.css";
 
 function MainContent() {
-  
-
   return (
     <div className="main-content">
       <header className="main-header">
-        <h1>대충 모의 면접 소개글</h1>
-        <div className="placeholder-box">디자인 수정예정</div>
+        <div className="explain">
+          <strong>AI 모의면접 서비스 소개</strong>
+          <br />
+          AI 모의면접은 사용자의 음성 답변을 실시간으로 분석하여, 실제 면접과
+          유사한 환경에서 효과적으로 면접 연습을 할 수 있도록 도와주는
+          인터랙티브 훈련 서비스입니다.
+        </div>
       </header>
 
       <div className="content-section">
         <SectionHeader />
 
         <div className="cards-container">
-        <Link to="/Interview" className="card">
-          <div className="card">
+          <Link to="/Interview" className="card">
             <div className="card-icon">
               <FaUsers />
             </div>
             <div className="card-title">모의면접</div>
-          </div>
-        </Link>
+          </Link>
 
-        
           <div className="card">
             <div className="card-icon">
               <FaMicrophone />

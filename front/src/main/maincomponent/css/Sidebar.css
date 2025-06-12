@@ -68,6 +68,38 @@
   flex-direction: column;
 }
 
+/* 🔹 공통 메뉴 스타일 */
+.menu-link {
+  text-decoration: none;
+  color: #555;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-link:hover {
+  background-color: #f5f5f5;
+}
+
+/* 🔹 선택된 메뉴 (아이콘 + 텍스트 색상 강조) */
+.menu-link.active {
+  color: #6baa7f;
+  font-weight: 600;
+  background-color: #f0f0f0;
+}
+
+.menu-link .menu-icon {
+  color: inherit; /* 텍스트 색상 따라가게 */
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.menu-link.active .menu-icon {
+  color: #6baa7f;
+}
+
 
 @media (max-width: 1024px) {
   .profile-info {
@@ -101,6 +133,18 @@
   .settings-icon {
     margin-right: 0;
     /* 오른쪽 여백 제거 */
+  }
+  .menu-link {
+    justify-content: center;
+    padding: 12px 0;
+  }
+
+  .menu-link .menu-icon {
+    margin-right: 0;
+  }
+
+  .menu-text {
+    display: none;
   }
 }
 

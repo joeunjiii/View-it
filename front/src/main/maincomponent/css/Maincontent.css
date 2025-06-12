@@ -15,20 +15,31 @@
   font-weight: 500;
 }
 
-.placeholder-box {
-  margin-top: 10px;
-  padding: 12px;
-  background-color: #ffffff;
-  border-radius: 6px;
-  color: #999;
-  font-size: 14px;
-  text-align: center;
-  border: 1px dashed #ccc;
+.explain {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #444;
+  margin: 32px 0;
+  letter-spacing: 0.3px;
 }
 
+.explain strong {
+  color: #6baa7f;
+}
+
+.section-header{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
 /* 카드 컨테이너 */
 .cards-container {
   display: flex;
+  gap: 20px;
   margin-bottom: 30px;
 }
 

@@ -1,18 +1,18 @@
 // components/Layout.jsx
-import React, { useState } from 'react';
-import Sidebar from './maincomponent/Sidebar';
-import './Layout.css';
+import React, { useState } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import Sidebar from "./maincomponent/Sidebar";
+import "./Layout.css";
 
-function Layout({ Subcomponent}) {
-  const [activeMenu, setActiveMenu] = useState("speech");
+function Layout({ Subcomponent }) {
+  console.log("🔁 Layout 렌더링됨");
+  
 
   return (
     <div className="layout-container">
-      <Sidebar activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
-
-
+      <Sidebar /> 
       <main className="content-area">
-        {Subcomponent}
+      <Outlet />
       </main>
     </div>
   );

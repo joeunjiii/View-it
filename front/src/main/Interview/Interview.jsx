@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import InterviewSettingsModal from "./InterviewSettingModal";
 import "./Interview.css";
 
 function Interview() {
   const [showModal, setShowModal] = useState(true); // 초기엔 모달 열림
-
+  const navigate = useNavigate(); // navigate 준비
+  console.log("🎯 Interview 렌더링됨");
   const handleStart = (settings) => {
     console.log("시작 설정:", settings);
     setShowModal(false);
@@ -26,33 +28,35 @@ function Interview() {
             <div className="header-left">
               남은 시간 <strong>9:56</strong>
             </div>
-            <button className="end-button">종료하기</button>
+            <button className="end-button" onClick={() => navigate("/main")}>
+              종료하기
+            </button>
           </div>
 
           {/* 본문 섹션 */}
           <div className="interview-section-body">
-            {/* 질문 탭 */}
+            {/* 좌측: 질문 탭 */}
             <div className="question-tabs">
               <button className="tab selected">질문</button>
               <button className="tab">Q1</button>
             </div>
 
-            {/* 음성 파형 + 타이머 */}
+            {/* 본문 2단 영역 */}
             <div className="interview-body">
-              <div className="voice-section">
+              {/* 왼쪽: 음성 파형 */}
+              <div className="voice-area">
                 <div className="voice-item">
-                  <span className="icon robot"></span>
-                  <div className="waveform" />
-                  나중에 파형추가
+                  <span className="icon robot" />
+                  <div className="waveform">파형1</div>
                 </div>
                 <div className="voice-item">
-                  <span className="icon mic"></span>
-                  <div className="waveform" />
-                  나중에 파형추가
+                  <span className="icon mic" />
+                  <div className="waveform">파형2</div>
                 </div>
               </div>
 
-              <div className="timer-wrapper">
+              {/* 오른쪽: 타이머 */}
+              <div className="timer-area">
                 <div className="timer-circle">
                   <p>답변시간</p>
                   <strong>15</strong>
