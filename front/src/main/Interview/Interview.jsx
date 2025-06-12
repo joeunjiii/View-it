@@ -46,11 +46,11 @@ function Interview() {
               {/* 왼쪽: 음성 파형 */}
               <div className="voice-area">
                 <div className="voice-item">
-                  <span className="icon robot" />
+                  <div>면접관</div>
                   <div className="waveform">파형1</div>
                 </div>
                 <div className="voice-item">
-                  <span className="icon mic" />
+                  <div>면접자</div>
                   <div className="waveform">파형2</div>
                 </div>
               </div>
@@ -58,8 +58,8 @@ function Interview() {
               {/* 오른쪽: 타이머 */}
               <div className="timer-area">
                 <div className="timer-circle">
-                  <p>답변시간</p>
-                  <strong>15</strong>
+                  <div className="timer-label">답변시간</div>
+                  <div className="timer-value">15</div>
                 </div>
                 <button className="replay-button">다시 답변하기</button>
               </div>

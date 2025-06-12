@@ -1,8 +1,9 @@
 /* 전체 인터뷰 콘텐츠 영역 */
 .interview-content {
   padding: 24px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 8vw;
+  margin-right: 8vw;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -67,10 +68,9 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 40px 0;
+  padding: 40px 5vw;
   gap: 80px;
-  max-width: 1200px;
-  margin: 0 auto; /* 가운데 정렬 */
+  box-sizing: border-box;
 }
 
 /* 왼쪽: 음성 영역 */
@@ -78,7 +78,8 @@
   display: flex;
   flex-direction: column;
   gap: 100px;
-  margin-right:500px;
+  margin-right:450px;
+  margin-left:50px;
 }
 
 .voice-item {
@@ -120,51 +121,57 @@
 
 /* 오른쪽: 타이머 영역 */
 .timer-area {
+  width: 50vw;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  gap: 16px;
+  margin-right:150px;
 }
 
+/* 타이머 원형 */
 .timer-circle {
-  width: 200px;      
+  width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-color: #e0f2e9;
+  background-color: white;
+  border: 14px solid #5e9b87;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  color: #1b5e20;
-  font-size: 18px;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-  margin-bottom: 100px;
+  font-weight: bold;
+  color: #000;
 }
 
-.timer-circle p {
+.timer-label {
   font-size: 14px;
-  margin: 0;
+  margin-bottom: 4px;
 }
 
-.timer-circle strong {
-  font-size: 40px;
+.timer-value {
+  font-size: 58px;
+  font-weight: 700;
 }
-
-
 
 /* 다시 답변하기 버튼 */
 .replay-button {
-  padding: 6px 14px;
-  border: 1px solid #5e9c76;
-  background-color: white;
-  color: #5e9c76;
-  border-radius: 20px;
+  margin-top:50px;
+  background-color: #ffffff;
+  border: 2px solid #6baa7f;
+  color: #000000;
+  padding: 8px 16px;
+  font-size: 18px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: all 0.2s ease;
 }
+
 .replay-button:hover {
-  background-color: #e8f5e9;
+  background-color: #f0f9f4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -183,4 +190,44 @@
 }
 .end-button:hover {
   background-color: #ffe5e5;
+}
+
+@media (max-width: 1024px){
+  .interview-body {
+    flex-direction: row;           /* 가로 배치 유지 */
+    gap: 40px;                     /* 데스크탑보다 좁게 */
+    align-items: flex-start;
+  }
+
+  .voice-area {
+    margin: 0;
+    gap: 40px;
+    flex: 1;
+    margin-right:200px;
+  }
+
+  .timer-area {
+    align-self: center;
+  }
+
+  .waveform {
+    
+    max-width: 250px;
+  }
+
+  .timer-circle {
+    width: 160px;
+    height: 160px;
+    border-width: 12px;
+    
+  }
+
+  .timer-value {
+    font-size: 40px;
+  }
+
+  .replay-button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
 }

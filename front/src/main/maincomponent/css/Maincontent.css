@@ -1,10 +1,11 @@
+/* 헤더 영역 */
 .main-content {
   flex: 1;
   background-color: #d9e9d9;
   padding: 20px;
+  min-width: 768px;
 }
 
-/* 헤더 영역 */
 .main-header {
   padding: 10px 0 20px;
 }
@@ -13,6 +14,14 @@
   font-size: 18px;
   color: #555;
   font-weight: 500;
+}
+.main-header .explain h2 {
+  max-width: 1024px;        /* 글이 너무 퍼지지 않게 제한 */
+  
+  margin: 0 auto;          /* 가운데 정렬 */
+  text-align: left;
+  word-break: keep-all;    /* 단어 중간 줄바꿈 방지 (한글에 효과적) */
+  line-height: 1.6;
 }
 
 .explain {
@@ -24,11 +33,12 @@
   letter-spacing: 0.3px;
 }
 
-.explain strong {
+.explain h2 {
+  font-size: 16px;
   color: #6baa7f;
 }
 
-.section-header{
+.section-header {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -36,7 +46,7 @@
   font-weight: 600;
   margin-bottom: 12px;
 }
-/* 카드 컨테이너 */
+/* 카드 부분*/
 .cards-container {
   display: flex;
   gap: 20px;
@@ -47,7 +57,7 @@
   background-color: white;
   border-radius: 10px;
   padding: 20px;
-  margin : 20px;
+  margin: 20px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -75,7 +85,7 @@
   color: #333;
 }
 
-/* 피드백 섹션 */
+/* 피드백 부분*/
 .feedback-section {
   display: flex;
   align-items: center;
@@ -115,4 +125,37 @@
 
 .feedback-card:hover {
   background-color: #d3e7d3;
+}
+
+@media (max-width: 1024px) {
+  .cards-container {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    font-size: 13px;
+    padding: 20px;
+  }
+  .feedback-section {
+    align-items: flex-start;  /* ✅ 왼쪽 정렬 유지 */
+    text-align: left;   
+    flex-direction: column;
+    
+    margin-top: 30px;
+  }
+
+  .feedback-list {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .feedback-card {
+    width: 90%;
+    padding: 16px;
+    font-size: 14px;
+  }
 }
